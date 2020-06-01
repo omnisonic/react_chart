@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+
+/* css variable for background color */
+:root {
+  --main-bg-color: green;    
+} 
+
+/* position of the chart */
+.column-chart {
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* border color of bars and chart*/
+.chart-column,
+.chart-container {
+  list-style: none;
+  border: 5px solid #000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.chart-container {
+  background-color: var(--main-bg-color);
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  min-height: 100px;
+}
+
+/* transition of color and width */
+.chart-container li { 
+  transition: width 2s, opacity 1s;
+}
+
+.chart-container li:hover { 
+  opacity: 0.8; 
+  width: 60px;
+
+}
+
+.column-chart .chart-column {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+
+.column-chart .chart-column {
+  background: #38596f;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.bar-chart .chart-container {
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }

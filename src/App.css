@@ -66,3 +66,7 @@
   margin: 0;
   width: 100%;
 }
+
+
+.column-chart { margin: 20px; border: 1px solid #3498db; }
+.column-chart { height: 500px; }

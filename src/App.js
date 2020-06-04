@@ -12,7 +12,7 @@ const App = () => {
       .then(response => response.json())
       .then(data => {
         console.log('got data back!', data);
-        setApiData(Object.entries(data.rates).filter(innerArray => innerArray[1] <= 5));
+        setApiData(Object.entries(data.rates).filter(innerArray => innerArray[1] <= 4));
       });
   }
  
@@ -46,34 +46,23 @@ const App = () => {
   // try this https://stackoverflow.com/questions/2722159/how-to-filter-object-array-based-on-attributes
 
   return (
-   <div>
-    {/* <div className="BarChart"> {
-    apiData.map(datum => (
-    <div className="BarChart-bar" style={{height: datum.percentage + "%"}}> {datum.label}
-  </div>
-    ))
-      }
-  </div> */}
+   <div class="container">
+    <header>    
+      <h1>Exchange Rate Chart</h1>
+    </header>
 
-
-
-
-
-
-
-    <div>
-      <h2>Exchange Rate Chart</h2>
-      <div className="column-chart">
-        <ul className="chart-container"> 
-          {
-            Object.entries(apiData).map(([, value]) => (
-              <li onClick={() => alert('1 EUR'  + ' costs ' + value[1] + value[0])} className="chart-column" style={{height: (value[1] * 50) + "%"}}> {value[0]}
-              </li>
-            ))
-          }
-        </ul>
+    <div className="chart">
+      <div className="chart-container"> 
+        {
+          Object.entries(apiData).map(([, value]) => (
+            <div onClick={() => alert('1 EUR'  + ' costs ' + value[1] + value[0])} className="chart-bar" style={{height: (value[1] * 50) + "%"}}> {value[0]}
+            </div>
+          ))
+        }
       </div>
     </div>
+    <footer>Created by JCTECH</footer>
+
   </div>
   );
 }

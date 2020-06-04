@@ -1,16 +1,53 @@
 
-/* css variable for background color */
-:root {
-  --main-bg-color: green;    
-} 
+* {
+  box-sizing: border-box; 
+}
 
-/* position of the chart */
-.column-chart {
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+  }
+
+h1 {
+  color:white;
+}
+
+header, footer {
+  background: #38596f;
+  height: 20vh;
+}
+header, footer, article, nav, aside {
+  padding: 1em;
+}
+
+header, footer, article, nav, aside {
+  padding: 1em;
+  }
+
+/* .grid-container {
+  grid-template-rows: 0.5fr 0.5fr;
+  grid-row-gap: 15px;
+  height: 100%;
+  margin: 0;
+
+} */
+
+.chart {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
   position: relative;
+  display: flex;
+  flex: 1;
+
 }
 
 /* border color of bars and chart*/
-.chart-column,
+.chart-bar,
 .chart-container {
   list-style: none;
   border: 5px solid #000;
@@ -21,40 +58,41 @@
   background-color: var(--main-bg-color);
   display: -webkit-flex;
   display: flex;
+  flex: 1;
   -webkit-flex-direction: row;
   flex-direction: row;
   -webkit-flex-wrap: nowrap;
   flex-wrap: nowrap;
   position: absolute;
   text-align: center;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  padding: 0;
-  margin: 0;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  right: 5px;
+  padding: 5px;
+  margin: 5px;
   min-height: 100px;
 }
 
 /* transition of color and width */
-.chart-container li { 
+.chart-container div { 
   transition: width 2s, opacity 1s;
 }
 
-.chart-container li:hover { 
+.chart-container div:hover { 
   opacity: 0.8; 
   width: 60px;
 
 }
 
-.column-chart .chart-column {
+.chart .chart-bar {
   -webkit-flex-grow: 1;
   flex-grow: 1;
   -webkit-align-self: flex-end;
   align-self: flex-end;
 }
 
-.column-chart .chart-column {
+.chart .chart-bar {
   background: #38596f;
   color: #ffffff;
   box-sizing: border-box;
@@ -67,5 +105,5 @@
   width: 100%;
 }
 
-.column-chart { margin: 20px; border: 1px solid #3498db; }
-.column-chart { height: 500px; }
+/* .chart { margin: 20px; border: 1px solid #3498db; } */
+/* .chart { height: 500px; } */

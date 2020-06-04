@@ -17,7 +17,10 @@ h1 {
 header, footer {
   background: #38596f;
   height: 20vh;
+  text-align: center;
 }
+
+
 header, footer, article, nav, aside {
   padding: 1em;
 }

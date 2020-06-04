@@ -12,7 +12,7 @@ const App = () => {
       .then(response => response.json())
       .then(data => {
         console.log('got data back!', data);
-        setApiData(Object.entries(data.rates).filter(innerArray => innerArray[1] <= 5));
+        setApiData(Object.entries(data.rates).filter(innerArray => innerArray[1] <= 2));
       });
   }
  
@@ -21,14 +21,14 @@ const App = () => {
   return (
    <div class="container">
     <header>    
-      <h1>Exchange Rate Chart</h1>
+      <h1>Exchange Rate Chart in Euros</h1>
     </header>
 
     <div className="chart">
-      <div className="chart-container"> 
+      <div className="chart-container">   
         {
           Object.entries(apiData).map(([, value]) => (
-            <div title="Click bar for rate info" onClick={() => alert('1 EUR'  + ' costs ' + value[1] + value[0])} 
+            <div title="Click bar for rate info" onClick={() => alert('1 EUR'  + ' costs ' + value[1] + ' '+ value[0])} 
             className="chart-bar" 
             style={{height: (value[1] * 20) + "%"}}> 
             {value[0]}

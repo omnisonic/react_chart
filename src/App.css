@@ -24,13 +24,7 @@ header, footer {
 header, footer {
   padding: 1em;
 }
-/* .grid-container {
-  grid-template-rows: 0.5fr 0.5fr;
-  grid-row-gap: 15px;
-  height: 100%;
-  margin: 0;
 
-} */
 
 .chart {
   background-color: rgba(255, 255, 255, 0.8);
@@ -101,6 +95,3 @@ header, footer {
   margin: 0;
   width: 100%;
 }
-
-/* .chart { margin: 20px; border: 1px solid #3498db; } */
-/* .chart { height: 500px; } */

@@ -59,7 +59,6 @@ const App = () => {
         {
           Object.entries(apiData).map(([, value]) => (
             <div
-            // onClick={() => alert({currency}  + ' costs ' + value[1].toFixed(2) + ' '+ value[0])} 
             className="chart-bar" 
             style={{height: (value[1] * 50) + "%"}}> 
             {value[0]}

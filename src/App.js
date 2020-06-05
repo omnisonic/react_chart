@@ -22,16 +22,27 @@ const App = () => {
    <div class="container">
     <header>    
       <h1>Exchange Rate Chart</h1>
+      <div>
+      <select name="rate" id="rate">
+      {
+        Object.entries(apiData).map(([, value]) => (
+        <option value={value[0]}>{value[0]}</option>
+        ))
+      }
+      </select>
+      </div>
     </header>
 
     <div className="chart">
       <div className="chart-container">   
         {
           Object.entries(apiData).map(([, value]) => (
-            <div title="Click bar for rate info" onClick={() => alert('1 USD'  + ' costs ' + value[1].toFixed(1) + ' '+ value[0])} 
+            <div title="Click bar for rate info" 
+            onClick={() => alert('1 USD'  + ' costs ' + value[1].toFixed(2) + ' '+ value[0])} 
             className="chart-bar" 
             style={{height: (value[1] * 20) + "%"}}> 
             {value[0]}
+            <div>{value[1].toFixed(2)}</div>
             </div>
           ))
         }

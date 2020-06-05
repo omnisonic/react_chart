@@ -8,7 +8,7 @@ const App = () => {
 
 
   function doFetch() {
-    fetch('https://api.exchangeratesapi.io/latest')
+    fetch('https://api.exchangeratesapi.io/latest?base=USD')
       .then(response => response.json())
       .then(data => {
         console.log('got data back!', data);
@@ -21,14 +21,14 @@ const App = () => {
   return (
    <div class="container">
     <header>    
-      <h1>Exchange Rate Chart in Euros</h1>
+      <h1>Exchange Rate Chart</h1>
     </header>
 
     <div className="chart">
       <div className="chart-container">   
         {
           Object.entries(apiData).map(([, value]) => (
-            <div title="Click bar for rate info" onClick={() => alert('1 EUR'  + ' costs ' + value[1] + ' '+ value[0])} 
+            <div title="Click bar for rate info" onClick={() => alert('1 USD'  + ' costs ' + value[1].toFixed(1) + ' '+ value[0])} 
             className="chart-bar" 
             style={{height: (value[1] * 20) + "%"}}> 
             {value[0]}

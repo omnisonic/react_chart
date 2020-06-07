@@ -10,18 +10,18 @@
   margin: 1;
   }
 
-h1 div {
-  color:white;
-}
-
 header, footer {
   background: #38596f;
   text-align: center;
   margin: 1;
 }
 
+label {
+  padding:1em;
+}
 
 header, footer {
+  color:white;
   padding: 1em;
 }
 

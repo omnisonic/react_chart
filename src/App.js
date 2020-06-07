@@ -32,7 +32,7 @@ const App = () => {
    <div className="container">
     <header>    
       <h1>Exchange Rate Chart</h1>
-      <div> <label>Choose Currency </label>
+      <div> <label>Choose Currency </label> 
         <select value={baseCurrency} onChange={changeBase} name="rate" id="rate">
         {
           Object.entries(apiData).map(([, value]) => (
@@ -43,6 +43,7 @@ const App = () => {
         <label>Choose Date </label>
         <select onChange={changeDate} name="date" id="date">
 
+          <option value="latest">Today</option>
           <option value="2019-01-12">2019-01-12</option>
           <option value="2018-01-12">2018-01-12</option>
           <option value="2017-01-12">2017-01-12</option>
